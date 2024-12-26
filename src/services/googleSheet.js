@@ -11,7 +11,6 @@ const sheets = google.sheets({
     version: 'v4',
     auth: jwtClient
 });
-
 const SPREADSHEET_ID = '1iCWoLsWS4_e4X1310UTbkgh4CqfeuWJv8N-diIukWO4';
 const RANGE = 'Sheet1!A:L';
 
