@@ -9,7 +9,7 @@ const upload = multer({ dest: 'uploads/' }); // Temporary upload directory
 router.post('/', upload.any(), (req, res) => {
     console.log('Form Fields:', req.body); // Logs text fields
     console.log('Uploaded Files:', req.files); // Logs file details
-    res.status(200).json({ message: 'Form data received successfully!' });
+    res.status(200).json( req.body );
 });
 
 module.exports = router;
