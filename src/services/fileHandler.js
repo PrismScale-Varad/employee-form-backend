@@ -47,13 +47,13 @@ async function processFiles(files) {
     const fileUrls = [];
 
     for (const file of files) {
-        const resizedPath = path.join(uploadsDir, `${file.filename}-resized.png`);
+        const resizedPath = path.join(uploadsDir, `${file.filename}-resized.webp`);
 
         try {
             // Resize and convert to PNG
             await sharp(file.path)
                 .resize({ width: 512 })
-                .toFormat('png')
+                .toFormat('webp')
                 .toFile(resizedPath);
 
             // Upload to Google Drive
