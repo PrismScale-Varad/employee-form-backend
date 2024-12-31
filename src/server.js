@@ -1,15 +1,9 @@
 const app = require('./app');
-const config = require('dotenv').config()
-const cors = require('cors');
+const dotenv = require('dotenv');
 
-const PORT = 3000;
+dotenv.config();  // Load environment variables from .env file
 
-app.use(
-    cors({
-      origin: process.env.ORIGINS.split(","),  // Allow origins listed in .env file
-      credentials: true,  // Allow credentials (cookies, etc.)
-    })
-);  
+const PORT = process.env.PORT || 3001;  // Use the port from .env, default to 3001
 
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
